@@ -10,6 +10,9 @@ query {
       romaji
     }
     siteUrl
+    coverImage {
+      large
+    }
     nextAiringEpisode {
       episode
       airingAt
@@ -18,10 +21,9 @@ query {
 }
 `;
 
+const discordWebhookURL = 'https://discord.com/api/webhooks/1295107867057197079/kzSPVurz6z3V5LStjTczjYxMYtFau5fY8RY3A8fyxqKDwF2hhxkWCUWCafJDvFS5JSuh';
 
-const discordWebhookURL = '';
-
-async function sendDiscordMessage(animeTitle, episodeNumber, releaseDate, animeUrl) {
+async function sendDiscordMessage(animeTitle, episodeNumber, releaseDate, animeUrl, animeImage) {
   const messagePayload = {
     embeds: [
       {
@@ -40,6 +42,9 @@ async function sendDiscordMessage(animeTitle, episodeNumber, releaseDate, animeU
             inline: true,
           },
         ],
+        thumbnail: {
+          url: animeImage, 
+        },
         footer: {
           text: 'Developed By Erslly',
         },
@@ -84,9 +89,10 @@ async function checkForNewEpisodes() {
       const episodeNumber = animeData.nextAiringEpisode.episode;
       const airingAt = animeData.nextAiringEpisode.airingAt;
       const animeTitle = animeData.title.english || animeData.title.romaji;
-      const animeUrl = animeData.siteUrl; 
+      const animeUrl = animeData.siteUrl;
+      const animeImage = animeData.coverImage.large; 
 
-      await sendDiscordMessage(animeTitle, episodeNumber, airingAt, animeUrl);
+      await sendDiscordMessage(animeTitle, episodeNumber, airingAt, animeUrl, animeImage);
     } else {
       console.log('Yeni bir bölüm bulunamadı.');
     }
