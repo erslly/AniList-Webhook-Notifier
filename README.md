@@ -14,7 +14,7 @@ AniList Webhook Notifier, AniList API'sini kullanarak anime serilerinin yeni bö
 
 Kurulum ve Kullanım:
 1. Projeyi Klonlayın:
-   git clone https://github.com/your-username/anilist-webhook-notifier.git
+   git clone https://github.com/erslly/anilist-webhook-notifier.git
 cd anilist-webhook-notifier
 
 2. Bağımlılıkları Yükleyin: 
