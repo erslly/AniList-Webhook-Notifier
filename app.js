@@ -41,7 +41,7 @@ async function sendDiscordMessage(animeTitle, episodeNumber, releaseDate, animeU
           },
         ],
         footer: {
-          text: 'AniList API tarafından sağlanmıştır',
+          text: 'Developed By Erslly',
         },
         timestamp: new Date(),
       },
