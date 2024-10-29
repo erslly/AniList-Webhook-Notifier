@@ -21,7 +21,7 @@ query {
 }
 `;
 
-const discordWebhookURL = 'https://discord.com/api/webhooks/1295107867057197079/kzSPVurz6z3V5LStjTczjYxMYtFau5fY8RY3A8fyxqKDwF2hhxkWCUWCafJDvFS5JSuh';
+const discordWebhookURL = '';
 
 async function sendDiscordMessage(animeTitle, episodeNumber, releaseDate, animeUrl, animeImage) {
   const messagePayload = {
